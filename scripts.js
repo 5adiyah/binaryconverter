@@ -20,29 +20,23 @@ var converter = function(number) {
 };
 
 $(document).ready(function(){
-  $("button#convert").click(function(){
-    $("#binaryconverter").hide();
-    $("#clear").show();
-    $("#result").show();
+  $("#binaryconverter").submit(function(){
     var number = parseInt($("input#number").val());
     var finalnumber = converter(number);
     $(".sentence").text(finalnumber);
     event.preventDefault();
   });
 
+  $("button#convert").click(function(){
+    $("#binaryconverter").hide();
+    $("#clear").show();
+    $("#result").show();
+  });
+
   $("button#clear").click(function(){
     $("#binaryconverter").show();
     $("#clear").hide();
     $("#result").hide();
-    event.preventDefault();
   });
-
-  $("#binaryconverter").submit(function(){
-    var number = parseInt($("input#number").val());
-    var finalnumber = converter(number);
-    // $(".sentence").text("hello");
-  });
-
-  event.preventDefault();
 
 });
